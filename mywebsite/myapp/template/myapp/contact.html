@@ -6,6 +6,15 @@
 
 <h1>ติดต่อร้านลุง</h1>
 
+<br>
+{% if alert == 'success' %}
+    <div class="alert alert-success">
+        <strong>สำเร็จ!</strong> ได้รับข้อมูลเรียบร้อยแล้ว ทางแอดมินจะติดต่อกลับโดยเร็วที่สุด
+    </div>
+{% endif %}
+<br>
+
+
 <div class="container">
     <form method="POST">
 
@@ -13,12 +22,12 @@
 
         <div class="form-group">
             <label for="name">ชื่อผู้ติดต่อ</label>
-            <input type="text", class="form-control", id="name",name="name">
+            <input type="text" class="form-control" id="name" name="name">
         </div><br>
 
         <div class="form-group">
             <label for="title">หัวข้อ</label>
-            <input type="text", class="form-control", id="title",name="title">
+            <input type="text" class="form-control" id="title" name="title">
         </div><br>
 
         <div class="form-group">
