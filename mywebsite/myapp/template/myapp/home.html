@@ -1,0 +1,39 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %} หน้าแรกของเว็บลุง {% endblock title %}
+
+{% block content %}
+
+
+
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">ร้านลุง</h1>
+    <p class="fs-5 text-body-secondary">ขายเครื่องมือที่ถูกที่สุดในประเทศ ส่งฟรี ไม่มีขั้นต่ำ</p>
+  </div>
+
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    
+    
+    {% for pd in product %}
+
+        <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm" style="height: 400px; margin-bottom: 15px;">
+            <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">{{pd.name}}</h4>
+            </div>
+            <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{pd.price}} บาท<small class="text-body-secondary fw-light">/ชิ้น</small></h1>
+            <p>{{pd.description|truncatechars:200}}</p>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">รายละเอียด</button>
+            </div>
+        </div>
+        </div>
+
+    {% endfor %}
+
+
+
+  </div>
+
+
+{% endblock content %}
